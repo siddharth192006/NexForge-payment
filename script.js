@@ -2,26 +2,48 @@ document.getElementById("upi-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const upiID = document.getElementById("upi-id").value.trim();
-    if (!upiID) {
-        alert("Please enter your UPI ID.");
+    const amount = document.getElementById("amount").value;
+    const phoneNumber = document.getElementById("phone-number").value.trim();
+
+    if (!upiID || !amount || amount <= 0 || amount > 2000 || !phoneNumber) {
+        alert("Please enter a valid UPI ID, amount (up to ₹2000), and phone number.");
         return;
     }
 
-    // Inform the user about the UPI request
-    const message = document.getElementById("message");
-    message.innerHTML = `<strong>Payment Request Sent!</strong><br>You will receive a notification on your mobile device's UPI-connected application (like PhonePe, Paytm, Google Pay, etc.) to complete the payment of ₹30.`;
-    message.classList.remove("hidden");
-
-    const yourUpiId = "siddharthdeshmukh24@fam"; // Your actual UPI ID
-    const name = "Siddharth Deshmukh"; // Your name
-    const amount = "1.00"; // Payment amount
-    const transactionNote = "Payment from NexForge"; // Description of the payment
-
     // Construct the UPI URL for initiating payment
-    const upiUrl = `upi://pay?pa=${yourUpiId}&pn=${encodeURIComponent(name)}&mc=&tid=${Date.now()}&tr=${Date.now()}&tn=${encodeURIComponent(transactionNote)}&am=${amount}&cu=INR`;
+    const upiUrl = `upi://pay?pa=${upiID}&am=${amount}&cu=INR`;
 
-    // Try to open the UPI URL (works better on mobile devices)
-    setTimeout(() => {
-        window.location.href = upiUrl;
-    }, 2000); // Wait for 2 seconds before attempting to open the UPI link
+    // Send payment request to your server (assumed URL is /send-sms)
+    fetch('/send-sms', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            phone: phoneNumber,
+            amount: amount,
+            upiID: upiID
+        }),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Inform the user about the payment request
+            const message = document.getElementById("message");
+            message.innerHTML = `<strong>Payment Request Generated!</strong><br>You will receive a notification on your mobile device's UPI-connected application to complete the payment of ₹${amount}.`;
+            message.classList.remove("hidden");
+        } else {
+            alert("Error sending SMS: " + data.error);
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+
+    // Generate QR code for the payment
+    $('#qrcode').empty().qrcode({
+        text: upiUrl,
+        width: 128,
+        height: 128,
+    }).removeClass("hidden");
 });
