@@ -12,7 +12,7 @@ document.getElementById("upi-form").addEventListener("submit", function (e) {
     message.innerHTML = `<strong>Payment Request Sent!</strong><br>You will receive a notification on your mobile device's UPI-connected application (like PhonePe, Paytm, Google Pay, etc.) to complete the payment of ₹30.`;
     message.classList.remove("hidden");
 
-    const yourUpiId = "7720887035@yesfam"; // Your actual UPI ID
+    const yourUpiId = "siddharthdeshmukh24@fam"; // Your actual UPI ID
     const name = "Siddharth Deshmukh"; // Your name
     const amount = "01.00"; // Payment amount
     const transactionNote = "Payment from NexForge"; // Description of the payment
