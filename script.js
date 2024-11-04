@@ -14,7 +14,7 @@ document.getElementById("upi-form").addEventListener("submit", function (e) {
 
     const yourUpiId = "7720887035@yesfam"; // Your actual UPI ID
     const name = "Siddharth Deshmukh"; // Your name
-    const amount = "30.00"; // Payment amount
+    const amount = "01.00"; // Payment amount
     const transactionNote = "Payment from NexForge"; // Description of the payment
 
     // Construct the UPI URL for initiating payment
