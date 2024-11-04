@@ -48,7 +48,7 @@ document.getElementById('paymentForm').addEventListener('submit', function(event
     messageDiv.innerHTML = `✅ Payment of ₹${amount} has been successfully sent to the owner's UPI ID (${ownerUPIId}). A confirmation SMS will be dispatched to ${phone}.`;
 
     // Prepare the payment URL and redirect to the UPI payment app
-    const paymentUrl = `upi://pay?pa=${ownerUPIId}&pn=NexForge&mc=1234&tid=1234567890&tr=1234567890&tn=Payment%20for%20service&am=${amountNumber}&cu=INR&url=https://nexforge.com`;
+    const paymentUrl = `upi://pay?pa=${ownerUPIId}&pn=YourName&am=${amount}&tn=Payment%20for%20service%20rendered`;
 
     // Redirect the user to the UPI payment application
     window.location.href = paymentUrl;
