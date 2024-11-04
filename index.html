@@ -2,36 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexForge</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>NexForge Payment Portal</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
-    <div class="payment-container">
-        <!-- Animated Company Title -->
-        <h1 class="company-title">NexForge</h1>
-
-        <h2>Make a UPI Payment</h2>
-        <p>Enter your UPI ID below to send a payment of ₹30.</p>
-
+    <div class="container">
+        <h1 class="animated-title">NexForge Payment Portal</h1>
         <form id="upi-form">
-            <div class="form-group">
-                <label for="upi-id">Your UPI ID</label>
-                <input type="text" id="upi-id" name="upi-id" required placeholder="your-upi-id@bank" autocomplete="off">
-            </div>
-
-            <button type="submit" class="btn">Pay ₹30 with UPI</button>
+            <label for="upi-id">Enter Recipient's UPI ID:</label>
+            <input type="text" id="upi-id" placeholder="example@bank" required>
+            <label for="amount">Enter Amount (up to ₹2000):</label>
+            <input type="number" id="amount" placeholder="amount" min="1" max="2000" required>
+            <label for="phone-number">Enter Your Phone Number:</label>
+            <input type="text" id="phone-number" placeholder="Your phone number" required>
+            <button type="submit">Send Payment</button>
         </form>
-
         <div id="message" class="hidden"></div>
+        <div id="qrcode" class="hidden"></div>
+        <footer>
+            <p>Recommended by NexForge</p>
+        </footer>
     </div>
-
-    <!-- Footer with Recommended Text -->
-    <footer class="footer">
-        <p>Recommended by NexForge</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Link to your JS file -->
 </body>
 </html>
