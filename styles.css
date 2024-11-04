@@ -1,226 +1,130 @@
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #e2e2e2, #ffffff);
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Container Styles */
-.container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Title Styles */
-.animated-title {
-    text-align: center;
-    font-size: 2.5em;
-    color: #4CAF50;
-    margin-bottom: 20px;
-    animation: titleAnimation 3s infinite alternate;
-}
-
-/* Animation for Title */
-@keyframes titleAnimation {
-    0% { color: #4CAF50; }
-    100% { color: #FFA500; }
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    margin: 10px 0 5px;
-    font-weight: bold;
-}
-
-input[type="text"],
-input[type="number"] {
-    padding: 10px;
-    border: 2px solid #4CAF50;
-    border-radius: 5px;
-    font-size: 1em;
-    margin-bottom: 20px;
-    transition: border-color 0.3s;
-}
-
-input[type="text"]:focus,
-input[type="number"]:focus {
-    border-color: #FFA500;
-    outline: none;
-}
-
-/* Button Styles */
-button {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1.2em;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-button:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
-}
-
-/* Message Styles */
-#message {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #4CAF50;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-/* QR Code Styles */
-#qrcode {
-    margin-top: 20px;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f0f4c3, #e1bee7);
+    background-size: 400% 400%;
+    overflow: hidden; /* Prevent scrolling */
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #666;
-}
-
-/* Hidden Class */
-.hidden {
-    display: none;
-}
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #e2e2e2, #ffffff);
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Container Styles */
 .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
+    position: relative; /* To position background image */
+    z-index: 1; /* Ensure container is above background */
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
 }
 
-/* Title Styles */
-.animated-title {
+.title {
     text-align: center;
-    font-size: 2.5em;
-    color: #4CAF50;
+    font-size: 26px; /* Increased font size */
+    font-weight: bold;
     margin-bottom: 20px;
-    animation: titleAnimation 3s infinite alternate;
+    color: #5e35b1;
+    animation: fadeIn 1s ease-in-out;
 }
 
-/* Animation for Title */
-@keyframes titleAnimation {
-    0% { color: #4CAF50; }
-    100% { color: #FFA500; }
-}
-
-/* Form Styles */
-form {
-    display: flex;
-    flex-direction: column;
+.form-group {
+    margin-bottom: 15px;
 }
 
 label {
-    margin: 10px 0 5px;
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
+    color: #333; /* Darker color for label */
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="tel"],
+input[type="number"],
+select {
+    width: calc(100% - 20px); /* Reduce width */
     padding: 10px;
-    border: 2px solid #4CAF50;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1em;
-    margin-bottom: 20px;
     transition: border-color 0.3s;
+    font-size: 16px; /* Increased font size for better readability */
+    box-sizing: border-box; /* Adjust box model to include padding */
 }
 
 input[type="text"]:focus,
-input[type="number"]:focus {
-    border-color: #FFA500;
+input[type="tel"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #5e35b1; /* Purple focus color */
     outline: none;
 }
 
-/* Button Styles */
-button {
-    padding: 10px;
+.btn {
+    background-color: #5e35b1; /* Purple button */
+    color: white;
+    padding: 10px 15px;
     border: none;
     border-radius: 5px;
-    background-color: #4CAF50;
-    color: white;
-    font-size: 1.2em;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    width: 100%;
 }
 
-button:hover {
-    background-color: #45a049;
-    transform: translateY(-2px);
+.btn:hover {
+    background-color: #4527a0; /* Darker purple on hover */
 }
 
-/* Message Styles */
-#message {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #4CAF50;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-}
-
-/* QR Code Styles */
-#qrcode {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Footer Styles */
-footer {
+.success-message {
+    color: green;
+    margin-top: 15px;
     text-align: center;
-    margin-top: 30px;
-    font-size: 0.9em;
-    color: #666;
 }
 
-/* Hidden Class */
+.error-message {
+    color: red;
+    margin-top: 5px;
+    text-align: center;
+}
+
 .hidden {
     display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Background logo styling */
+body::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1000px; /* Size of the logo */
+    height: 1000px; /* Size of the logo */
+    background-image: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&q=80&w=1080'); /* Replace with your logo path */
+    background-size: contain; /* Adjust to fit the logo */
+    background-repeat: no-repeat; /* Prevent repetition */
+    transform: translate(-50%, -50%); /* Center the logo */
+    animation: rotate 20s linear infinite; /* Rotate animation */
+    opacity: 0.1; /* Make it semi-transparent */
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
