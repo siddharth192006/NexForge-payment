@@ -3,29 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NexForge Payment Portal</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-qrcode/1.0/jquery.qrcode.min.js"></script>
+    <title>NexForge Payment</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1 class="animated-title">NexForge Payment Portal</h1>
-        <form id="upi-form">
-            <label for="upi-id">Enter Recipient's UPI ID:</label>
-            <input type="text" id="upi-id" placeholder="example@bank" required>
-            <label for="amount">Enter Amount (up to ₹2000):</label>
-            <input type="number" id="amount" placeholder="amount" min="1" max="2000" required>
-            <label for="phone-number">Enter Your Phone Number:</label>
-            <input type="text" id="phone-number" placeholder="Your phone number" required>
-            <button type="submit">Send Payment</button>
+        <h1 class="title">NexForge Payment Portal</h1>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="upiID">UPI ID:</label>
+                <input type="text" id="upiID" required>
+            </div>
+            <div class="form-group">
+                <label for="countryCode">Country Code:</label>
+                <select id="countryCode">
+                    <option value="+91">India (+91)</option>
+                    <option value="+1">USA (+1)</option>
+                    <option value="+44">UK (+44)</option>
+                    <option value="+61">Australia (+61)</option>
+                    <option value="+81">Japan (+81)</option>
+                    <option value="+49">Germany (+49)</option>
+                    <option value="+33">France (+33)</option>
+                    <option value="+39">Italy (+39)</option>
+                    <option value="+82">South Korea (+82)</option>
+                    <option value="+65">Singapore (+65)</option>
+                    <option value="+86">China (+86)</option>
+                    <option value="+62">Indonesia (+62)</option>
+                    <option value="+55">Brazil (+55)</option>
+                    <option value="+7">Russia (+7)</option>
+                    <!-- Add more country codes as needed -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount (₹):</label>
+                <input type="number" id="amount" min="1" required>
+            </div>
+            <button type="submit" class="btn">Send Payment</button>
         </form>
         <div id="message" class="hidden"></div>
-        <div id="qrcode" class="hidden"></div>
-        <footer>
-            <p>Recommended by NexForge</p>
-        </footer>
     </div>
-    <script src="script.js"></script> <!-- Link to your JS file -->
+    <script src="script.js"></script>
 </body>
 </html>
