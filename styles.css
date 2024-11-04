@@ -1,132 +1,226 @@
+/* Basic Reset */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e2e2e2, #ffffff);
     color: #333;
-    display: flex;
-    flex-direction: column; /* Change to column layout */
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
-    min-height: 100vh; /* Ensure it takes full height */
-    margin: 0;
+    line-height: 1.6;
 }
 
-.payment-container {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    max-width: 400px;
+/* Container Styles */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styles */
+.animated-title {
     text-align: center;
-}
-
-.company-title {
-    font-size: 40px;
-    font-family:cursive;
-    font-weight: bold;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-size: 2.5em;
+    color: #4CAF50;
     margin-bottom: 20px;
-    animation: fadeInUp 2s ease-in-out infinite, colorChange 6s ease-in-out infinite;
+    animation: titleAnimation 3s infinite alternate;
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    50% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
+/* Animation for Title */
+@keyframes titleAnimation {
+    0% { color: #4CAF50; }
+    100% { color: #FFA500; }
 }
 
-@keyframes colorChange {
-    0% {
-        color: #ff5733;
-    }
-    25% {
-        color: #3498db;
-    }
-    50% {
-        color: #2ecc71;
-    }
-    75% {
-        color: #9b59b6;
-    }
-    100% {
-        color: #ff5733;
-    }
-}
-
-h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-p {
-    margin-bottom: 20px;
-    color: #7f8c8d;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
 }
 
 label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
+    margin: 10px 0 5px;
+    font-weight: bold;
 }
 
-input[type="text"] {
-    width: 100%;
+input[type="text"],
+input[type="number"] {
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
 }
 
-.btn {
-    background-color: #3498db;
-    color: white;
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #FFA500;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    padding: 10px;
     border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
     cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.btn:hover {
-    background-color: #2980b9;
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
 }
 
+/* Message Styles */
+#message {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* QR Code Styles */
+#qrcode {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Hidden Class */
 .hidden {
     display: none;
 }
-
-#message {
-    margin-top: 20px;
-    font-size: 14px;
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.footer {
-    margin-top: auto; /* Push footer to the bottom */
+/* Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #e2e2e2, #ffffff);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container Styles */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styles */
+.animated-title {
     text-align: center;
-    font-size: 14px;
-    color: #7f8c8d;
-    font-style: italic;
-    padding: 10px 0; /* Add some padding for spacing */
+    font-size: 2.5em;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    animation: titleAnimation 3s infinite alternate;
+}
+
+/* Animation for Title */
+@keyframes titleAnimation {
+    0% { color: #4CAF50; }
+    100% { color: #FFA500; }
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #FFA500;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Message Styles */
+#message {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* QR Code Styles */
+#qrcode {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
 }
